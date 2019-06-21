@@ -1,0 +1,61 @@
+Start from scratch
+*create html file
+* create file where we will create angular module
+* npm install angular
+* place angular in html
+
+(in reverse)
+*controller
+   this.removeTodo = (index) => {
+            console.log(index)
+            this.todos.splice(index, 1);
+
+        }
+        *template
+        ng-click="$ctrl.removeTodo($index)"
+        
+        *$index is only avaialbe when using ng-repeat
+/* adding button */
+
+*  controller
+     this.addTodo = () => {
+            this.todos.push(this.newTodo); 
+            // two-way data binding
+            this.newTodo = '';
+        }
+
+*   template
+    ng-click="$ctrl.addTodo()"
+
+    /* iterating  over collections */
+    * controller  this.todos = ['bob','dill', 'pickles'];
+    *template ng-repeat='todo in $ctrl.todos'
+
+    /* obtaining values from input */
+    /* show interpolation */
+     *template ng-model = "$ctrl.newTodo
+     *{{inbetween pre tags}}
+
+     /* introduce controller */
+
+      controller: function() {
+       
+       /* introduce template */
+       
+        template: `
+    <h1>Todo List</h1>
+        <input>
+        <button>add</button>
+        <ul>
+        <li></li>
+        </ul>
+        <hr/>
+        <pre></pre>`,
+         *ng-app= 'app' after trying to get it to render
+     
+    },
+    /* creating components */
+    .component('todoList', { })
+    * point out how we use camelCase to obtain template in html that is in snake-case
+
+    <todo-list></todo-list>
